@@ -20,21 +20,22 @@ double generateEquation(int grade)
     double ans = 0;
     int num1;
     int num2;
-    int randomOperationIndex;
-    string opChar[4] = { "+", "-", "*", "/" };
+    int random_operation_index;
+    string opChar[4] = {"+", "-", "*", "/"};
     if (grade == 1 || grade == 2)
     {
         num1 = rand() % 100 + 1;
         num2 = rand() % 100 + 1;
 
-        randomOperationIndex = (rand() % 2);
-        switch (randomOperationIndex) {
+        random_operation_index = (rand() % 2);
+        switch (random_operation_index)
+        {
         case 0:
-            printf("%d + %d = ?", num1, num2);
+            printf("%d + %d = ?\n", num1, num2);
             ans = num1 + num2;
             break;
         case 1:
-            printf("%d - %d = ?", num1, num2);
+            printf("%d - %d = ?\n", num1, num2);
             ans = num1 - num2;
             break;
         }
@@ -43,22 +44,23 @@ double generateEquation(int grade)
     {
         num1 = rand();
         num2 = rand();
-        randomOperationIndex = (rand() % 4);
-        switch (randomOperationIndex) {
+        random_operation_index = (rand() % 4);
+        switch (random_operation_index)
+        {
         case 0:
-            printf("%d+%d = ?", num1, num2);
+            printf("%d+%d = ?\n", num1, num2);
             ans = num1 + num2;
             break;
         case 1:
-            printf("%d-%d = ?", num1, num2);
+            printf("%d-%d = ?\n", num1, num2);
             ans = num1 - num2;
             break;
         case 2:
-            printf("%d*%d = ?", num1, num2);
+            printf("%d*%d = ?\n", num1, num2);
             ans = num1 * num2;
             break;
         case 3:
-            printf("%d/%d = ?", num1, num2);
+            printf("%d/%d = ?\n", num1, num2);
             ans = num1 / num2;
             break;
         }
@@ -67,22 +69,23 @@ double generateEquation(int grade)
     {
         double num1 = (double)(rand()) / RAND_MAX * INT_MAX;
         double num2 = (double)(rand()) / RAND_MAX * INT_MAX;
-        randomOperationIndex = (rand() % 4);
-        switch (randomOperationIndex) {
+        random_operation_index = (rand() % 4);
+        switch (random_operation_index)
+        {
         case 0:
-            printf("%lf+%lf = ?", num1, num2);
+            printf("%lf+%lf = ?\n", num1, num2);
             ans = num1 + num2;
             break;
         case 1:
-            printf("%lf-%lf = ?", num1, num2);
+            printf("%lf-%lf = ?\n", num1, num2);
             ans = num1 - num2;
             break;
         case 2:
-            printf("%lf*%lf = ?", num1, num2);
+            printf("%lf*%lf = ?\n", num1, num2);
             ans = num1 * num2;
             break;
         case 3:
-            printf("%lf/%lf = ?", num1, num2);
+            printf("%lf/%lf = ?\n", num1, num2);
             ans = num1 / num2;
             break;
         }
@@ -106,7 +109,7 @@ void solve(string &grade, int &num_questions)
     int ans;
     for (int i = 0; i < num_questions; i++)
     {
-        ans = floor(grade_num * 100.0f + 0.5) / 100.0f;
+        ans = floor(generateEquation(grade_num) * 100.0f + 0.5) / 100.0f;
         int input;
         cin >> input;
         if (ans == input)
