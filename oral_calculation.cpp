@@ -3,6 +3,8 @@
 #include <string>
 #include <iomanip>
 #include <math.h>
+#include <limits.h>
+#include <stdlib.h>
 #include <set>
 using namespace std;
 
