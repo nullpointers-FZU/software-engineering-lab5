@@ -8,7 +8,9 @@ using namespace std;
 
 int extractGrade(string &grade)
 {
-
+    string str1=grade.substr(grade.length()-1);
+    int num = stoi(str1);
+    return num;
 }
 
 double generateEquation(int grade)
